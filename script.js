@@ -41,11 +41,30 @@ if (currentRow.length > 0 || currentCell){
 }
 console.log(allData);
 
-let allData2 = [
-    ["ID", "Name", "Occupation", "Age"],
-    ["42", "Bruce", "Knight", "41"],
-    ["57", "Bob", "Fry Cook", "19"],
-    ["63", "Blaine", "Quiz Master", "58"],
-    ["98", "Bill", "Doctor’s Assistant", "26"],
+
+console.log('part 3')
+
+//data in arrays
+let csvObj = [
+    // ["ID", "Name", "Occupation", "Age"],
+    // ["42", "Bruce", "Knight", "41"],
+    // ["57", "Bob", "Fry Cook", "19"],
+    // ["63", "Blaine", "Quiz Master", "58"],
+    // ["98", "Bill", "Doctor’s Assistant", "26"],
   ]
-  
+
+
+csvObj.length = csvArray.length -1
+
+for (let i = 0; i < csvObj.length; i++) {  
+    csvObj[i]= {};
+}
+
+for (let i = 0; i < csvObj.length; i++){
+    for (let x = 0; x < csvArray; x++){
+        let data = csvArray[0][x];
+        csvObj[i][data] = csvArray[i + 1][x];
+    
+    }
+}
+console.log(csvObj);
